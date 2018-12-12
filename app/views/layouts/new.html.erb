@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>林田昌明の自己紹介ページ</title>
+  <link rel="stylesheet" href="../../assets/stylesheet/normalize.css">
+  <link rel="stylesheet" href="../../assets/stylesheet/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+  <div id="main">
+    <header class="header">
+      <h1><ruby>
+        林田<rt>Hayashida</rt>
+        昌明<rt>Yoshiaki</rt>
+      </ruby></h1>
+      <p></p>
+      <ul class="nav">
+        <li class="nav-item"><a href="#basic-info">基本情報</a></li>
+        <li class="nav-item"><a href="#education">学歴</a></li>
+        <li class="nav-item"><a href="#experience">職歴</a></li>
+        <li class="nav-item"><a href="#interest">趣味/特技</a></li>
+      </ul>
+    </header>
+
+    <section class="section basic-info" id="basic-info">
+      <h2 class="heading">基本情報</h2>
+      <p class="text">
+        はじめまして。林田昌明（はやしだ　よしあき）と申します。<br>
+        外国語を専門とした大学を卒業し、金融会社に就職後、<br>
+        経理担当として半年間の業務経験ののち、現在は転職活動をおこなっております。
+      </p>
+    </section>
+    <div class="background">
+      <section class="section education" id="education">
+        <h2 class="heading">学歴</h2>
+        <p class="text">
+          <table cellspacing="10">
+            <tr>
+              <td>2014年3月</td>
+              <td>大阪府立大冠高等学校　卒業<td>
+            </tr>
+            <tr>
+              <td>2014年4月〜2016年3月</td>
+              <td>関西外国語大学短期大学部英米語学科</td>
+            </tr>
+            <tr>
+              <td>2016年4月〜2018年3月</td>
+              <td>関西外国語大学外国語学部英米語学科</td>
+            </tr>
+          </table>
+        </p>
+      </section>
+      <section class="section experience" id="experience">
+        <h2 class="heading">職歴</h2>
+        <p class="text">
+          <table cellspacing="8">
+            <td>
+              2018年4月〜2018年11月
+            </td>
+            <td>
+              株式会社さくらインベスト<br>大阪本社管理本部
+            </td>
+          </table>
+        </p>
+      </section>
+    </div>
+    <section class="section interest" id="interest">
+      <h2 class="heading">趣味/特技</h2>
+      <div class="wrapper">
+        <div class="box">
+          <i class="fas fa-book-open icon"></i>
+          <div class="title reading">読書<br>（ノンフィクション）</div>
+          <p class="text">®ø
+            年間で50~100冊ほど読みます。<br>
+            特に好きなジャンルは心理学や行動経済学です。
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-coins icon"></i>
+          <div class="title reading">節約</div>
+          <p class="text">
+            月に１度、自分が使ったお金を計算しています。<br>
+            そのおかげで、お金を使うときによく考えるようになりました。
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-globe-americas icon"></i>
+          <div class="title language">英語</div>
+          <p class="text">
+            大学では英語で講義を受けたりしていました。<br>
+            来年１年間かけて、英検１級を取得しようと考えています。
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $(window).scroll(function() {
+        var dy = $(this).scrollTop();
+        console.log(dy);
+        $('h1').css('opacity', 1 - dy/120);
+        $('.basic-info').css('opacity', 1 - dy/600);
+        if (dy < 700) {
+          $('.education, .experience').css('opacity', dy/600);
+        } else {
+          $('.education, .experience').css('opacity', 2 - dy/700);
+        }
+        $('.interest').css('opacity', dy/1200);
+      });
+    });
+  </script>
+</body>
+
+</html>
